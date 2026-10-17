@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { siteAsset } from "@/lib/site-paths";
 import { WhatsAppLink } from "./whatsapp-link";
 
 export function TrustCta() {
@@ -15,7 +16,7 @@ export function TrustCta() {
           </div>
         </div>
         <div className="trust-cta__visual">
-          <Image src="/assets/ai/rooftop-terrace.png" alt="تصور بصري لتراس واسع بإطلالة مفتوحة" fill sizes="(max-width: 760px) 100vw, 38vw" />
+          <Image src={siteAsset("/assets/ai/rooftop-terrace.png")} alt="تصور بصري لتراس واسع بإطلالة مفتوحة" fill sizes="(max-width: 760px) 100vw, 38vw" />
           <span>صورة توضيحية</span>
         </div>
       </div>

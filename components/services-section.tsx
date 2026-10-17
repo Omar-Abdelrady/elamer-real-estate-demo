@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { services } from "@/lib/site-content";
+import { siteAsset } from "@/lib/site-paths";
 
 export function ServicesSection() {
   return (
     <section id="services" className="content-section services-section page-shell" aria-labelledby="services-title">
       <div className="services-section__visual">
-        <Image src="/assets/ai/bright-living-room.png" alt="تصور بصري لمساحة داخلية سكنية" fill sizes="(max-width: 820px) 100vw, 42vw" />
+        <Image src={siteAsset("/assets/ai/bright-living-room.png")} alt="تصور بصري لمساحة داخلية سكنية" fill sizes="(max-width: 820px) 100vw, 42vw" />
         <span>صورة توضيحية</span>
       </div>
       <div className="services-section__content">

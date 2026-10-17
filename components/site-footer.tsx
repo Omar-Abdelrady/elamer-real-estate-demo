@@ -1,11 +1,12 @@
 import { siteContact } from "@/lib/site-content";
+import { siteAsset } from "@/lib/site-paths";
 import Image from "next/image";
 
 export function SiteFooter() {
   return (
     <footer id="footer" className="site-footer">
       <div className="site-footer__inner page-shell">
-        <div className="site-footer__brand"><Image src="/assets/reference/alamer-logo-transparent.png" alt="العامر للتسويق العقاري" width={88} height={68} /><p>العامر للتسويق العقاري — عقارات موثقة وتواصل مباشر في المعادي وزهراء المعادي.</p></div>
+        <div className="site-footer__brand"><Image src={siteAsset("/assets/reference/alamer-logo-transparent.png")} alt="العامر للتسويق العقاري" width={88} height={68} /><p>العامر للتسويق العقاري — عقارات موثقة وتواصل مباشر في المعادي وزهراء المعادي.</p></div>
         <nav className="site-footer__nav" aria-label="روابط الموقع"><a href="/">الرئيسية</a><a href="/units">العقارات</a><a href="/units?transaction=sale">للبيع</a><a href="/units?transaction=rent">للإيجار</a></nav>
         <div className="site-footer__contact">
           <span>تواصل مباشر</span>

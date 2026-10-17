@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { areas } from "@/lib/site-content";
+import { siteAsset } from "@/lib/site-paths";
 
 export function AreasSection() {
   return (
     <section id="areas" className="areas-section" aria-labelledby="areas-title">
       <div className="areas-section__inner page-shell">
         <div className="areas-section__visual">
-          <Image src="/assets/ai/gated-community-aerial.png" alt="تصور بصري لمنطقة سكنية متكاملة" fill sizes="(max-width: 820px) 100vw, 44vw" />
+          <Image src={siteAsset("/assets/ai/gated-community-aerial.png")} alt="تصور بصري لمنطقة سكنية متكاملة" fill sizes="(max-width: 820px) 100vw, 44vw" />
           <span>صورة توضيحية للمناطق السكنية</span>
         </div>
         <div className="areas-section__content">

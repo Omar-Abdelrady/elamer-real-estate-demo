@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { siteAsset } from "@/lib/site-paths";
 import { useEffect, useRef, useState } from "react";
 import { WhatsAppLink } from "./whatsapp-link";
 
@@ -45,7 +46,7 @@ export function SiteHeader() {
       <div className="site-header__inner page-shell">
         <a className="brand-lockup" href="/" aria-label="العامر للتسويق العقاري - الرئيسية">
           <Image
-            src="/assets/reference/alamer-logo-transparent.png"
+            src={siteAsset("/assets/reference/alamer-logo-transparent.png")}
             alt="العامر للتسويق العقاري"
             width={150}
             height={116}

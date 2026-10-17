@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { siteAsset } from "@/lib/site-paths";
 import { WhatsAppLink } from "./whatsapp-link";
 
 export function HeroSection() {
@@ -32,7 +33,7 @@ export function HeroSection() {
       <div className="hero-stage__visual">
         <div className="hero-stage__frame">
           <Image
-            src="/assets/ai/hero-compound-exterior.png"
+            src={siteAsset("/assets/ai/hero-compound-exterior.png")}
             alt="تصور بصري لمجمع سكني حديث"
             width={1536}
             height={1024}
