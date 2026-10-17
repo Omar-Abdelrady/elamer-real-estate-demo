@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { filterListings, formatListingCount, getAvailablePropertyTypes, getListingLocations, initialFilters, parsePropertyQuery, serializePropertyQuery, type FilterState } from "@/lib/property-filters";
 import { propertyListings } from "@/lib/site-content";
+import { sitePath } from "@/lib/site-paths";
 import { PropertyCard } from "./property-card";
 import { PropertyFilter } from "./property-filter";
 
@@ -17,7 +18,7 @@ export function UnitsExplorer() {
   const commitFilters = useCallback((nextFilters: FilterState) => {
     setFilters(nextFilters);
     const query = serializePropertyQuery(nextFilters);
-    window.history.replaceState(null, "", query ? `/units?${query}` : "/units");
+    window.history.replaceState(null, "", sitePath(query ? `/units?${query}` : "/units"));
   }, []);
 
   const updateFilter = <K extends keyof FilterState>(key: K, value: FilterState[K]) => {

@@ -1,5 +1,6 @@
 import { getAvailablePropertyTypes, getListingLocations } from "@/lib/property-filters";
 import { propertyListings } from "@/lib/site-content";
+import { sitePath } from "@/lib/site-paths";
 
 const typeLabels = {
   residential: "سكنية",
@@ -15,7 +16,7 @@ export function PropertySearch() {
 
   return (
     <section className="property-search-wrap page-shell" aria-label="ابحث في العقارات">
-      <form className="property-search" action="/units" method="get">
+      <form className="property-search" action={sitePath("/units")} method="get">
         <label>
           <span>الغرض</span>
           <select name="transaction" defaultValue="sale">
