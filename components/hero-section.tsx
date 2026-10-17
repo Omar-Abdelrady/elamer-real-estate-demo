@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { siteAsset } from "@/lib/site-paths";
+import { siteAsset, sitePath } from "@/lib/site-paths";
 import { WhatsAppLink } from "./whatsapp-link";
 
 export function HeroSection() {
@@ -16,7 +16,7 @@ export function HeroSection() {
           اكتشف عقارات للبيع والإيجار، وقارن بين الخيارات المتاحة، وخد الخطوة المناسبة مع العامر للتسويق العقاري.
         </p>
         <div className="hero-section__actions">
-          <a className="hero-catalog-link" href="/units">
+          <a className="hero-catalog-link" href={sitePath("/units")}>
             <span>تصفح العقارات</span>
             <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
               <path d="M5 10h9M10 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

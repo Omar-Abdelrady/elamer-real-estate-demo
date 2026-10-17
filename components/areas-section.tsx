@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { areas } from "@/lib/site-content";
-import { siteAsset } from "@/lib/site-paths";
+import { siteAsset, sitePath } from "@/lib/site-paths";
 
 export function AreasSection() {
   return (
@@ -16,7 +16,7 @@ export function AreasSection() {
           <p>نبدأ بالمنطقة اللي تناسب يومك، وبعدها نرتب لك المتاح حسب المساحة وطبيعة الاستخدام.</p>
           <div className="areas-list">
             {areas.map((area) => (
-              <a className="area-row" href="/units" key={area.name}>
+              <a className="area-row" href={sitePath("/units")} key={area.name}>
                 <span className="area-row__number">{area.index}</span>
                 <span className="area-row__name">{area.name}</span>
                 <span className="area-row__detail">{area.detail}</span>

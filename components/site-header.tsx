@@ -1,17 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { siteAsset } from "@/lib/site-paths";
+import { siteAsset, sitePath } from "@/lib/site-paths";
 import { useEffect, useRef, useState } from "react";
 import { WhatsAppLink } from "./whatsapp-link";
 
 const links = [
-  { href: "/", label: "الرئيسية" },
-  { href: "/units", label: "العقارات" },
-  { href: "/units?transaction=sale", label: "للبيع" },
-  { href: "/units?transaction=rent", label: "للإيجار" },
-  { href: "/#owner", label: "اعرض عقارك" },
-  { href: "/#contact", label: "تواصل معنا" },
+  { href: sitePath("/"), label: "الرئيسية" },
+  { href: sitePath("/units"), label: "العقارات" },
+  { href: sitePath("/units?transaction=sale"), label: "للبيع" },
+  { href: sitePath("/units?transaction=rent"), label: "للإيجار" },
+  { href: sitePath("/#owner"), label: "اعرض عقارك" },
+  { href: sitePath("/#contact"), label: "تواصل معنا" },
 ];
 
 export function SiteHeader() {
@@ -44,7 +44,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner page-shell">
-        <a className="brand-lockup" href="/" aria-label="العامر للتسويق العقاري - الرئيسية">
+        <a className="brand-lockup" href={sitePath("/")} aria-label="العامر للتسويق العقاري - الرئيسية">
           <Image
             src={siteAsset("/assets/reference/alamer-logo-transparent.png")}
             alt="العامر للتسويق العقاري"

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getListingLocations } from "@/lib/property-filters";
 import { propertyListings } from "@/lib/site-content";
+import { sitePath } from "@/lib/site-paths";
 
 export function LocationBrowser() {
   const locations = getListingLocations(propertyListings);
@@ -27,7 +28,7 @@ export function LocationBrowser() {
                 return (
                   <a
                     key={name}
-                    href={`/units?location=${encodeURIComponent(name)}`}
+                    href={sitePath(`/units?location=${encodeURIComponent(name)}`)}
                     className="location-tile"
                     aria-hidden={!visible}
                     tabIndex={visible ? undefined : -1}

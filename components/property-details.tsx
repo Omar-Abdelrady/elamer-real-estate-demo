@@ -1,4 +1,5 @@
 import type { PropertyListing } from "@/lib/site-content";
+import { sitePath } from "@/lib/site-paths";
 import { PropertyCard } from "./property-card";
 import { PropertyGallery } from "./property-gallery";
 import { WhatsAppLink } from "./whatsapp-link";
@@ -12,7 +13,7 @@ export function PropertyDetails({ listing, related = [] }: { listing: PropertyLi
     <>
       <article className="property-details page-shell">
         <nav className="property-details__breadcrumbs" aria-label="مسار التنقل">
-          <a href="/">الرئيسية</a><span aria-hidden="true">/</span><a href="/units">العقارات</a><span aria-hidden="true">/</span><span>{listing.title}</span>
+          <a href={sitePath("/")}>الرئيسية</a><span aria-hidden="true">/</span><a href={sitePath("/units")}>العقارات</a><span aria-hidden="true">/</span><span>{listing.title}</span>
         </nav>
 
         <div className="property-details__layout">

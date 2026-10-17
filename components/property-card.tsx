@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { PropertyListing } from "@/lib/site-content";
+import { sitePath } from "@/lib/site-paths";
 import { WhatsAppLink } from "./whatsapp-link";
 
 const typeLabels = {
@@ -38,7 +39,7 @@ export function PropertyCard({ listing, headingLevel = "h3" }: { listing: Proper
           <strong>{listing.priceLabel}</strong>
         </div>
         <div className="listing-card__actions">
-          <a className="listing-card__details" href={`/units/${listing.slug}`}>شوف التفاصيل</a>
+          <a className="listing-card__details" href={sitePath(`/units/${listing.slug}`)}>شوف التفاصيل</a>
           <WhatsAppLink label="اسأل عنها" message={message} variant="outline" />
         </div>
       </div>

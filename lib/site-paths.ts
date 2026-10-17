@@ -1,5 +1,8 @@
-const basePath = process.env.GITHUB_ACTIONS === "true" ? "/elamer-real-estate-demo" : "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export function siteAsset(path: string) {
+export function sitePath(path: string) {
+  if (path.startsWith("#") || /^(https?:|mailto:|tel:)/.test(path)) return path;
   return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
 }
+
+export const siteAsset = sitePath;
